@@ -1,0 +1,29 @@
+# NetworkGuardian configuration
+# Copy this file to config/config.yaml and fill in your own values.
+# config/config.yaml is gitignored so secrets never get committed.
+
+network:
+  # Interface the IoT hotspot runs on (packets are captured here).
+  monitor_interface: wlan1
+  # Uplink interface to the home router / internet.
+  uplink_interface: wlan0
+  # Traffic aggregation window in seconds.
+  window_seconds: 10
+
+hotspot:
+  ssid: NetworkGuardian
+  # WPA2 passphrase for the IoT hotspot (min 8 chars).
+  passphrase: guardian123
+  channel: 6
+  static_ip: 192.168.4.1
+  dhcp_range_start: 192.168.4.2
+  dhcp_range_end: 192.168.4.20
+
+alerting:
+  enabled: false
+  sender: your_email@gmail.com
+  # Gmail App Password (16 chars) — NOT your real password.
+  app_password: xxxxxxxxxxxxxxxx
+  recipient: alert_target@gmail.com
+  # Minimum seconds between two alert emails.
+  cooldown_seconds: 60

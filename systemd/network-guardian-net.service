@@ -1,0 +1,12 @@
+[Unit]
+Description=NetworkGuardian hotspot + NAT setup
+After=network.target
+Wants=network.target
+
+[Service]
+Type=oneshot
+ExecStart=/etc/network-guardian-startup.sh
+RemainAfterExit=yes
+
+[Install]
+WantedBy=multi-user.target

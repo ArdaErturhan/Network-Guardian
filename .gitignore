@@ -1,0 +1,26 @@
+# Secrets / real config
+config/config.yaml
+
+# Python
+__pycache__/
+*.py[cod]
+venv/
+.venv/
+*.egg-info/
+
+# Trained artifacts (regenerate with src/train.py)
+models/*.npz
+models/threshold.txt
+
+# Logs and captured data
+logs/
+data/*.csv
+data/*.pcap
+
+# OS / editor
+.DS_Store
+.idea/
+.vscode/
+
+# Stray file from an old shell mishap
+self.threshold,

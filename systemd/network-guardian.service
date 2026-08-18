@@ -1,0 +1,15 @@
+[Unit]
+Description=NetworkGuardian anomaly detection monitor
+After=network-guardian-net.service
+Requires=network-guardian-net.service
+
+[Service]
+Type=simple
+User=root
+WorkingDirectory=/home/arda/network-guardian
+ExecStart=/home/arda/network-guardian/venv/bin/python3 /home/arda/network-guardian/main.py
+Restart=on-failure
+RestartSec=5
+
+[Install]
+WantedBy=multi-user.target
